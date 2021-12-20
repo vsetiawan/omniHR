@@ -4,8 +4,11 @@ import fileExtensionProcessor
 
 
 def repometrics(pathToDirectory):
+    """This function generates metrics of a given directory and its subdirectory
+    """
 
     # Initialise variables
+    NUM_DECIMAL_PLACE = 6
     processor = fileExtensionProcessor.FileExtensionProcessor()
     summaryDict = {}
     summaryDict["summary"] = {}
@@ -37,7 +40,7 @@ def repometrics(pathToDirectory):
     # Process the statistical summary
     for language in summaryDict["summary"].keys():
         summaryDict["summary"][language] = round(
-            summaryDict["summary"][language]/totalFileCount, 6)
+            summaryDict["summary"][language]/totalFileCount, NUM_DECIMAL_PLACE)
 
     # Display the output
     print(json.dumps(summaryDict, indent=4))
