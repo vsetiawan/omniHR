@@ -4,19 +4,28 @@ Repometrics takes the list of languages it knows from [`languages.json`](/src/re
 
 Repometrics identify the language used based on the extension of the file.
 
+## Exclusion
+Repometrics excludes `.git` directory from the statistics
+
 ## Prerequisites
-- Python 3 installed
-- Pip package management system installed
+- `Python 3` installed
+- `Pip` package management system installed
 
 ## Installation
 Clone the repository to your local machine
 
-Install it by running pip install, providing path to the repository
+Install it by running `pip install`, providing path to the repository
 ```bash
 pip install omniHR/
 ```  
 
 Add the script install directory to the PATH environment variable if it is not on PATH.
+
+## Usage
+Pass in the path to the repository to be analyzed as the argument
+```bash
+repometrics /path/to/repo
+```
 
 ## Future Improvements
 

@@ -14,10 +14,11 @@ def generateSummary(pathToDirectory: str) -> None:
     summaryDict["summary"] = {}
     summaryDict["results"] = []
     totalFileCount = 0
+    excludedGitPath = os.path.join(pathToDirectory,".git")
 
     # Process the files
     for root, subdirs, files in os.walk(pathToDirectory):
-        if (root.startswith("./.git")):
+        if (root.startswith(excludedGitPath)):
             continue
         for file in files:
             totalFileCount += 1
