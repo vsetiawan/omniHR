@@ -1,7 +1,7 @@
 import json
 
 
-def processLanguage(filename: str = "languages.json", out_file: str = "extensionLanguage.json") -> None:
+def processLanguage(filename: str = "data/languages.json", out_file: str = "data/extensionLanguage.json") -> None:
     """
     This function processes JSON file containing mapping from languages to its related extensions into a JSON file mapping extensions to the language that it belongs to.
 
