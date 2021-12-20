@@ -1,9 +1,9 @@
 import os
 import json
-import fileExtensionProcessor
+import repometrics.fileExtensionProcessor as fileExtensionProcessor
 
 
-def repometrics(pathToDirectory):
+def generateSummary(pathToDirectory: str) -> None:
     """This function generates metrics of a given directory and its subdirectory
     """
 
@@ -17,6 +17,8 @@ def repometrics(pathToDirectory):
 
     # Process the files
     for root, subdirs, files in os.walk(pathToDirectory):
+        if (root.startswith("./.git")):
+            continue
         for file in files:
             totalFileCount += 1
             filepath = os.path.join(root, file)
@@ -44,7 +46,3 @@ def repometrics(pathToDirectory):
 
     # Display the output
     print(json.dumps(summaryDict, indent=4))
-
-
-if __name__ == '__main__':
-    repometrics(".")
