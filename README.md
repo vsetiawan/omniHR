@@ -4,6 +4,10 @@ Repometrics takes the list of languages it knows from [`languages.json`](/src/re
 
 Repometrics identify the language used based on the extension of the file.
 
+## Prerequisites
+- Python 3 installed
+- Pip package management system installed
+
 ## Installation
 Clone the repository to your local machine
 
